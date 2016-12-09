@@ -36,7 +36,7 @@ To find all sentences in a PDF that contain words in a list of words starting at
 
 `python3 sentence_processor.py --input my_pdf.pdf --output my_output.csv --text stop_words.txt --mode find --offset 5`
 
-The script outputs 2 files, one appended *sentence.csv* and the other appendend *topic_model.csv*.
+The script outputs 2 files, one appended *sentence.csv* and the other appended *topic_model.csv*.
 
 The first file contains the results produced by the SentenceProcessor instance and contains the page number, the matched sentence, and the count for how many times a stop word or key word occurred on the given page.
 
