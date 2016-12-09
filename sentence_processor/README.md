@@ -28,11 +28,11 @@ optional arguments:
                         Default is 3.
 ```
 
-##### For example, to retrieve all sentences in a PDF that do not contain words in a stop list of words, starting at page 5, run this command:
+For example, to retrieve all sentences in a PDF that do not contain words in a stop list of words, starting at page 5, run this command:
 
 `python3 sentence_processor.py --input my_pdf.pdf --output my_output.csv --text stop_words.txt --mode stop --offset 5`
 
-##### To find all sentences in a PDF that contain words in a list of words starting at page 5, you would just switch the mode to 'find':
+To find all sentences in a PDF that contain words in a list of words starting at page 5, you would just switch the mode to 'find':
 
 `python3 sentence_processor.py --input my_pdf.pdf --output my_output.csv --text stop_words.txt --mode find --offset 5`
 
