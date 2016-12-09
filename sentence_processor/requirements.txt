@@ -1,0 +1,4 @@
+gensim==0.13.3
+nltk==3.2.1
+stop_words==2015.2.23.1
+PyPDF2==1.26.0
