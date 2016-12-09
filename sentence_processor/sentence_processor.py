@@ -114,14 +114,14 @@ if __name__ == '__main__':
   parser.add_argument('-off', '--offset',
                       help="Enter the page number to start reading the PDF from. If not set, the PDF will start at page 1.",
                       type=int)
-  parser.add_argument('-nt', '--num_topics', help="The number of topics to model. Default is 20", default=20, type=int)
-  parser.add_argument('-nw', '--num_words', help="The number of words to export per topic", default=3, type=int)
+  parser.add_argument('-nt', '--num_topics', help="The number of topics to model. Default is 20.", default=20, type=int)
+  parser.add_argument('-nw', '--num_words', help="The number of words to export per topic. Default is 3.", default=3, type=int)
 
   args = vars(parser.parse_args())  # Get some variables from parse_args dictionary (directory, output)
-  required_args = vars(named_arguments.parse_args())
 
-  input_file = required_args['input']
-  output_file = required_args['output']
+
+  input_file = args['input']
+  output_file = args['output']
   text = args['text']  # the text file with our control words
   mode = args['mode']
   offset = args['offset']
