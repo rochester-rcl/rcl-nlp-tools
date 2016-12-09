@@ -103,8 +103,9 @@ class TopicModeler(object):
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(description="Count sentences in a pdf file")  # Setting up our Argument Parser
-  parser.add_argument('-i', '--input', help="input pdf", required="true", type=str)  # Adding an input argument
-  parser.add_argument('-o', '--output', help="output file in csv format", type=str)  # adding an output argument
+  named_arguments = parser.add_argument_group('required arguments')
+  named_arguments.add_argument('-i', '--input', help="input pdf", required=True, type=str)  # Adding an input argument
+  named_arguments.add_argument('-o', '--output', help="output file in csv format", required=True, type=str)  # adding an output argument
   parser.add_argument('-txt', '--text', help="Optional text file for storing key words to look for or to exclude",
                       type=str)
   parser.add_argument('-m', '--mode',
@@ -117,9 +118,10 @@ if __name__ == '__main__':
   parser.add_argument('-nw', '--num_words', help="The number of words to export per topic", default=3, type=int)
 
   args = vars(parser.parse_args())  # Get some variables from parse_args dictionary (directory, output)
+  required_args = vars(named_arguments.parse_args())
 
-  input_file = args['input']
-  output_file = args['output']
+  input_file = required_args['input']
+  output_file = required_args['output']
   text = args['text']  # the text file with our control words
   mode = args['mode']
   offset = args['offset']
